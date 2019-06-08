@@ -24,6 +24,7 @@ var connectionString = fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disabl
 
 var db, dberr = sql.Open("postgres", connectionString)
 
+// Credentials is exported
 type Credentials struct {
 	Password string `json:"password"`
 	Username string `json:"username"`
