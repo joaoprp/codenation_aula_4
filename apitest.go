@@ -66,7 +66,6 @@ func main() {
 	 * We can actually build it if we want as we can daisy-chain middlewares
 	 */
 	// router.Use(middleware)
-	// router.HandleFunc("/", home)
 	router.HandleFunc("/auth", generateToken)
 	router.Handle("/posts", middlewares.Auth(http.HandlerFunc(posts))).Methods("GET")
 	router.Handle("/posts", middlewares.Auth(http.HandlerFunc(postPosts))).Methods("POST")
